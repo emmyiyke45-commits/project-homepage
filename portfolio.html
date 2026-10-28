@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmy's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+    width: 100%;
+    min-width: 320px;
+    overflow-wrap: break-word;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.projects-grid,
+.about-container,
+.contact-section {
+    min-width: 0;
+}
+
+.project-card,
+.about-content,
+.contact-content {
+    min-width: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background-color: #fff;
+    line-height: 1.5;
+}
+
+.about-section {
+    background: linear-gradient(
+        168deg,
+        blue 0%,
+        purple 72%,
+        #fff 72.2%,
+        #fff 100%
+    );
+    padding: 60px 6.25% 90px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 0;
+}
+
+.profile-card {
+    position: relative;
+    flex: 0 0 42%;
+    height: 380px;
+    box-shadow: 0 4px 8px #0003;
+    z-index: 1;
+}
+
+.profile-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-card h1 {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    color: lightgreen;
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: normal;
+    text-shadow: 1px 2px 4px #0008;
+}
+
+.about-content {
+    flex: 1;
+    background: lightgray;
+    padding: 20px 15px;
+    margin-left: -10px;
+    box-shadow: 0 4px 8px #0003;
+}
+
+.about-content h2,
+.work-section > h2,
+.contact-content h2 {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    color: #555;
+}
+
+.social-links,
+.contact-socials {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.social-links a,
+.contact-socials a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.work-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 6.25% 80px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px 30px;
+}
+
+.project-card {
+    min-width: 0;
+    background: lightgray;
+    box-shadow: 0 3px 7px #0003;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 14px #0003;
+}
+
+.project-image {
+    height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    padding: 15px;
+}
+
+.red {
+    background-color: #a51f20;
+}
+
+.purple {
+    background-color: #8075c9;
+}
+
+.green {
+    background-color: #5f914e;
+}
+
+.pink {
+    background-color: #c260b2;
+}
+
+.orange {
+    background-color: #dc9137;
+}
+
+.blue {
+    background-color: #4aa3cf;
+}
+
+.project-info {
+    min-height: 115px;
+    padding: 10px 15px 15px;
+}
+
+.project-info h3 {
+    display: inline-block;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-right: 8px;
+}
+
+.project-info > a {
+    float: right;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-info p {
+    clear: both;
+    margin-top: 8px;
+    color: #666;
+    font-size: 0.78rem;
+    line-height: 1.4;
+}
+
+
+.contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    background-color: indigo;
+    color: white;
+    padding: 45px 6.25%;
+}
+
+.contact-content {
+    flex: 1;
+}
+
+.contact-content h2 {
+    margin-bottom: 8px;
+}
+
+.contact-content p {
+    margin-bottom: 18px;
+}
+
+.contact-content address {
+    margin: 20px 0;
+    font-style: normal;
+}
+
+.contact-socials {
+    justify-content: flex-start;
+    margin-top: 25px;
+    gap: 20px;
+}
+
+.contact-image {
+    flex: 0 1 58%;
+}
+
+.contact-image img {
+    display: block;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Tablet layout */
+@media (max-width: 900px) {
+    .about-section {
+        padding: 40px 5% 70px;
+    }
+
+    .profile-card {
+        flex-basis: 45%;
+        height: 330px;
+    }
+
+    .about-content {
+        padding: 22px 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .contact-section {
+        padding: 40px 5%;
+        gap: 25px;
+    }
+
+    .contact-image {
+        flex-basis: 50%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .about-section {
+        padding: 30px 6% 50px;
+        background: linear-gradient(
+            165deg,
+            purple 0%,
+            #078eaa 75%,
+            #fff 75.2%,
+            #fff 100%
+        );
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .profile-card {
+        flex: auto;
+        width: 85%;
+        height: 320px;
+        align-self: center;
+    }
+
+    .profile-card h1 {
+        font-size: 2.3rem;
+    }
+
+    .about-content {
+        margin: -15px 0 0;
+        padding: 25px 20px;
+    }
+
+    .about-content h2,
+    .work-section > h2,
+    .contact-content h2 {
+        font-size: 1.7rem;
+    }
+
+    .social-links {
+        margin-top: 20px;
+    }
+
+    .work-section {
+        padding: 20px 6% 50px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+
+    .project-info {
+        min-height: 105px;
+    }
+
+    .contact-section {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 35px 6%;
+        gap: 25px;
+    }
+
+    .contact-image {
+        flex: auto;
+        width: 100%;
+    }
+
+    .contact-image img {
+        max-height: 350px;
+    }
+}
+
+    </style>>
+</head>
+<body>
+
+    
+    <header class="about-section">
+        <div class="about-container">
+            <div class="profile-card">
+                <img
+                    src="https://scontent.flos2-2.fna.fbcdn.net/v/t39.30808-6/858569753_3777384412420541_4991194795569962966_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s1080x1920&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=bdeb5f&_nc_eui2=AeECyiyhbvIBS4wmegzwQmOOsgHgAwxUgnuyAeADDFSCe58bh6iBYfNYCUgi7eJ3xCXEYFuiHieRckQz3-yOGGN9&_nc_ohc=xdrZRn2RWGEQ7kNvwHZOyAC&_nc_oc=Adoltm4r8o97-ntd8VBNDQTaj9HvnWeeMc4BmI0Wc3fz4HM3neBWXHfr-ChYAESwIIg&_nc_zt=23&_nc_ht=scontent.flos2-2.fna&_nc_gid=P_TiYddpO4F6Ep1FCeGUEg&_nc_ss=7b2a8&oh=00_AQNhTnmzBJ-EAv-s5Oulz04QbXsTSc-MD2I590iKvEAxtQ&oe=6AE3BBE1"
+                    alt="Portrait of Emmy"
+                >
+                <h1>Emmy Iyke</h1>
+            </div>
+
+            <div class="about-content">
+                <h2>About me</h2>
+                <p>
+                    Hello! I'm a creative professional passionate about
+                    building beautiful, functional, and user-friendly
+                    digital experiences. I enjoy solving problems,
+                    learning new technologies, and bringing ideas to life.
+                </p>
+
+                <div class="social-links">
+                    <a href="https://github.com/" aria-label="GitHub">GitHub ↗</a>
+                    <a href="https://linkedin.com/" aria-label="LinkedIn">LinkedIn ↗</a>
+                    <a href="https://x.com/" aria-label="X">X ↗</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <main>
+        <section class="work-section">
+            <h2>My work</h2>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <div class="project-image red">
+                        <span>Screenshot<br>of project</span>
+            
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <a href="#" aria-label="View Portfolio Website">↗</a>
+                        <p>A responsive portfolio website built with HTML and CSS.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image purple">
+                        <span>Screenshot<br>of project</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Calculator App</h3>
+                        <a href="#" aria-label="View Calculator App">↗</a>
+                        <p>A simple calculator for everyday mathematical operations.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image green">
+                        <span>Screenshot<br>of project</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Weather App</h3>
+                        <a href="#" aria-label="View Weather App">↗</a>
+                        <p>A weather application that displays current conditions.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image pink">
+                        <span>Screenshot<br>of project</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>To-Do List</h3>
+                        <a href="#" aria-label="View To-Do List">↗</a>
+                        <p>A task manager to organize activities and daily goals.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image orange">
+                        <span>Screenshot<br>of project</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Restaurant Page</h3>
+                        <a href="#" aria-label="View Restaurant Page">↗</a>
+                        <p>A modern restaurant webpage with a menu and contact details.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image blue">
+                        <span>Screenshot<br>of project</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Landing Page</h3>
+                        <a href="#" aria-label="View Landing Page">↗</a>
+                        <p>A clean landing page designed to introduce a product.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    
+    <footer class="contact-section">
+        <div class="contact-content">
+            <h2>Contact me</h2>
+            <p>
+                Please get in touch if you think our work could be
+                mutually beneficial!
+            </p>
+
+            <address>
+                Isheri North, Opic Ogun state<br>
+                Lagos, Nigeria
+            </address>
+
+            <p>☎ +234 905 555 6195</p>
+            <p>✉ emmyiyke45@gmail.com/p>
+
+            <div class="contact-socials">
+                <a href="https://github.com/">GitHub</a>
+                <a href="https://linkedin.com/">LinkedIn</a>
+                <a href="https://x.com/">X</a>
+            </div>
+        </div>
+
+        <div class="contact-image">
+            <img
+                src="https://scontent.flos2-2.fna.fbcdn.net/v/t39.30808-6/858569753_3777384412420541_4991194795569962966_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s1080x1920&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=bdeb5f&_nc_eui2=AeECyiyhbvIBS4wmegzwQmOOsgHgAwxUgnuyAeADDFSCe58bh6iBYfNYCUgi7eJ3xCXEYFuiHieRckQz3-yOGGN9&_nc_ohc=xdrZRn2RWGEQ7kNvwHZOyAC&_nc_oc=Adoltm4r8o97-ntd8VBNDQTaj9HvnWeeMc4BmI0Wc3fz4HM3neBWXHfr-ChYAESwIIg&_nc_zt=23&_nc_ht=scontent.flos2-2.fna&_nc_gid=P_TiYddpO4F6Ep1FCeGUEg&_nc_ss=7b2a8&oh=00_AQNhTnmzBJ-EAv-s5Oulz04QbXsTSc-MD2I590iKvEAxtQ&oe=6AE3BBE1"
+                alt="Professional working at a desk"
+            >
+        </div>
+    </footer>
+
+</body>
+</html>
